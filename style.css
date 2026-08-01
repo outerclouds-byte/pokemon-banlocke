@@ -27,14 +27,13 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: 640px;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .stats-panel {
   flex: 1;
-  min-width: 480px;
+  min-width: 0;
   background: #2c2f38;
   border: 1px solid #383c47;
   border-radius: 8px;
