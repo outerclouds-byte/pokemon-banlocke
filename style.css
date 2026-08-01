@@ -116,11 +116,30 @@ body {
 @media (max-width: 860px) {
   .layout {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .container {
+    width: 100%;
   }
 
   .stats-panel {
     position: static;
     width: 100%;
+  }
+
+  .stats-name {
+    width: 6rem;
+    font-size: 0.8rem;
+  }
+
+  .stats-pct {
+    width: 3.2rem;
+    font-size: 0.75rem;
+  }
+
+  .stats-row {
+    gap: 0.35rem;
   }
 }
 
