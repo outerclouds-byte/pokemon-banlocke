@@ -1,3 +1,9 @@
+// Liste complète des Pokémon du Pokédex de Hoenn (Émeraude/Rubis/Saphir), 386 Pokémon,
+// avec toutes les évolutions et pré-évolutions incluses.
+// id = numéro du Pokédex national (utilisé pour récupérer le sprite officiel)
+// Noms officiels français (vérifiés).
+// Triés dans l'ordre du Pokédex de Hoenn (RSE), voir
+// https://www.pokepedia.fr/Liste_des_Pok%C3%A9mon_dans_l%27ordre_du_Pok%C3%A9dex_de_Hoenn
 const POKEMON_LIST = [
   { id: 252, name: "Arcko" },
   { id: 253, name: "Massko" },

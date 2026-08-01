@@ -4,8 +4,6 @@ const MAX_SELECTION = 10;
 const selectorsContainer = document.getElementById("selectors");
 const pseudoInput = document.getElementById("pseudo");
 const submitBtn = document.getElementById("submit-btn");
-const resultSection = document.getElementById("result-section");
-const resultText = document.getElementById("result-text");
 
 // Sprite officiel via PokeAPI (id = numéro de Pokédex national)
 function spriteUrl(id) {
@@ -203,25 +201,57 @@ function onSubmit() {
   }
 
   const chosenIds = selectedIds.filter((id) => id !== null);
-  const chosenNames = chosenIds.map((id) => POKEMON_LIST.find((p) => p.id === id).name);
 
-  if (chosenNames.length === 0) {
+  if (chosenIds.length === 0) {
     alert("Sélectionne au moins un Pokémon avant d'envoyer.");
     return;
   }
 
-  const lines = [
-    "Équipe sélectionnée :",
-    ...chosenNames.map((name, i) => `${i + 1}. ${name}`),
-    "",
-    `Pseudo : ${pseudo}`
-  ];
-
-  resultText.value = lines.join("\n");
-  resultSection.hidden = false;
-
   recordVote(pseudo, chosenIds);
+  showThanksModal(pseudo, chosenIds);
 }
+
+const thanksModal = document.getElementById("thanks-modal");
+const modalPseudo = document.getElementById("modal-pseudo");
+const modalSprites = document.getElementById("modal-sprites");
+const modalCloseBtn = document.getElementById("modal-close-btn");
+
+function showThanksModal(pseudo, chosenIds) {
+  modalPseudo.textContent = `Pseudo : ${pseudo}`;
+  modalSprites.innerHTML = "";
+
+  chosenIds.forEach((id) => {
+    const pokemon = POKEMON_LIST.find((p) => p.id === id);
+    if (!pokemon) return;
+
+    const item = document.createElement("div");
+    item.className = "modal-sprite-item";
+
+    const sprite = document.createElement("img");
+    sprite.className = "modal-sprite";
+    sprite.alt = pokemon.name;
+    sprite.src = spriteUrl(id);
+
+    const name = document.createElement("span");
+    name.textContent = pokemon.name;
+
+    item.appendChild(sprite);
+    item.appendChild(name);
+    modalSprites.appendChild(item);
+  });
+
+  thanksModal.hidden = false;
+}
+
+function hideThanksModal() {
+  thanksModal.hidden = true;
+}
+
+modalCloseBtn.addEventListener("click", hideThanksModal);
+thanksModal.addEventListener("click", (event) => {
+  if (event.target === thanksModal) hideThanksModal();
+});
+
 
 submitBtn.addEventListener("click", onSubmit);
 

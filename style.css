@@ -314,23 +314,89 @@ h1 {
   transform: scale(0.98);
 }
 
-.result-section {
-  margin-top: 1.5rem;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
 }
 
-.result-section h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.modal-overlay[hidden] {
+  display: none;
 }
 
-#result-text {
+.modal {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #2c2f38;
   border: 1px solid #454a56;
-  background: #1a1c22;
-  color: #e6e8ec;
-  font-family: inherit;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.modal h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.modal-pseudo {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 0.75rem;
+}
+
+.modal-subtitle {
+  margin: 0 0 0.5rem;
+  color: #9aa0ab;
+  font-size: 0.9rem;
+}
+
+.modal-sprites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-sprite-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.modal-sprite {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+}
+
+.modal-sprite-item span {
+  font-size: 0.8rem;
+}
+
+#modal-close-btn {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
   font-size: 0.95rem;
-  resize: vertical;
+  font-weight: bold;
+  color: #1a1c22;
+  background: #9aa5b8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#modal-close-btn:hover {
+  background: #b0b9c9;
 }

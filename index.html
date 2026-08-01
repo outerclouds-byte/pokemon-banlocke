@@ -23,11 +23,6 @@
     </div>
 
     <button id="submit-btn">Envoyer mon choix</button>
-
-    <div class="result-section" id="result-section" hidden>
-      <h2>Résumé</h2>
-      <textarea id="result-text" readonly rows="8"></textarea>
-    </div>
   </div>
 
   <aside class="stats-panel">
@@ -35,6 +30,16 @@
     <p id="stats-status" class="stats-status">Connexion aux votes partagés…</p>
     <div id="stats-list" class="stats-list"></div>
   </aside>
+</div>
+
+<div class="modal-overlay" id="thanks-modal" hidden>
+  <div class="modal">
+    <h2>Merci pour ton vote !</h2>
+    <p class="modal-pseudo" id="modal-pseudo"></p>
+    <p class="modal-subtitle">Pokémon bannis :</p>
+    <div class="modal-sprites" id="modal-sprites"></div>
+    <button id="modal-close-btn" type="button">Fermer</button>
+  </div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
