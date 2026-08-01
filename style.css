@@ -122,16 +122,11 @@ body {
   .stats-panel {
     position: static;
     width: 100%;
-    min-width: 0;
-  }
-
-  .container {
-    max-width: 100%;
   }
 }
 
 h1 {
-  font-size: clamp(2.25rem, 8vw, 4rem);
+  font-size: 4rem;
   text-align: center;
   margin-bottom: 0.25rem;
 }
@@ -404,104 +399,4 @@ h1 {
 
 #modal-close-btn:hover {
   background: #b0b9c9;
-}
-
-/* ---------------------------------------------------------------------
-   Ajustements responsive (tablette / mobile)
---------------------------------------------------------------------- */
-@media (max-width: 600px) {
-  body {
-    padding: 1.25rem 0.75rem;
-  }
-
-  .subtitle {
-    font-size: 0.85rem;
-  }
-
-  .stats-panel {
-    padding: 0.85rem 1rem;
-  }
-
-  .stats-panel h2 {
-    font-size: 1rem;
-  }
-
-  .stats-list,
-  .combo-options {
-    max-height: 320px;
-  }
-
-  .stats-name {
-    width: 6.5rem;
-    font-size: 0.8rem;
-  }
-
-  .stats-pct {
-    width: 3.6rem;
-    font-size: 0.75rem;
-  }
-
-  .stats-rank {
-    width: 1.2rem;
-    font-size: 0.75rem;
-  }
-
-  .selector-row {
-    gap: 0.5rem;
-    padding: 0.4rem 0.5rem;
-  }
-
-  .row-number {
-    width: 1.6rem;
-    font-size: 0.85rem;
-  }
-
-  .combo-trigger {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.5rem;
-  }
-
-  .combo-label {
-    font-size: 0.9rem;
-  }
-
-  .pseudo-section {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.4rem;
-  }
-
-  .pseudo-section input,
-  .combo-search {
-    font-size: 16px;
-  }
-
-  #submit-btn {
-    font-size: 0.95rem;
-    padding: 0.85rem;
-  }
-
-  .modal {
-    padding: 1.1rem;
-  }
-
-  .modal-sprites {
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-  }
-
-  .modal-sprite {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .combo-sprite {
-    width: 26px;
-    height: 26px;
-  }
 }
