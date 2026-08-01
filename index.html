@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BanLocke - Sélection Pokémon Emeraude</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Sélection de ton équipe - Pokémon Émeraude</h1>
+    <p class="subtitle">Choisis jusqu'à 10 Pokémon capturables dans le Pokédex d'Émeraude.</p>
+  </div>
+
+  <div class="layout">
+  <div class="container">
+    <div id="selectors"></div>
+
+    <div class="pseudo-section">
+      <label for="pseudo">Pseudo :</label>
+      <input type="text" id="pseudo" placeholder="Ton pseudo">
+    </div>
+
+    <button id="submit-btn">Envoyer mon choix</button>
+
+    <div class="result-section" id="result-section" hidden>
+      <h2>Résumé</h2>
+      <textarea id="result-text" readonly rows="8"></textarea>
+    </div>
+  </div>
+
+  <aside class="stats-panel">
+    <h2>Pokémon les plus choisis</h2>
+    <p id="stats-status" class="stats-status">Connexion aux votes partagés…</p>
+    <div id="stats-list" class="stats-list"></div>
+  </aside>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="pokemon-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
