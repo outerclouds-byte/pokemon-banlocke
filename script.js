@@ -309,14 +309,14 @@ function computeAllPokemonStats(voteList) {
     ids.forEach((id) => counts.set(id, (counts.get(id) || 0) + 1));
   });
 
-  const total = voteList.length;
+  const maxCount = Math.max(0, ...counts.values());
 
   return POKEMON_LIST.map((pokemon) => {
     const count = counts.get(pokemon.id) || 0;
     return {
       id: pokemon.id,
       count,
-      pct: total ? Math.round((count / total) * 100) : 0
+      pct: maxCount ? Math.round((count / maxCount) * 100) : 0
     };
   }).sort((a, b) => b.count - a.count);
 }
